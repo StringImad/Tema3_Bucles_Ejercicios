@@ -39,9 +39,10 @@ public class NumerosPrimos {
             } while (eleccion < 1 || eleccion > 3);
             switch (eleccion) {
                 case 1:
-                    do{System.out.println("Introduce un numero para comprobar entre (2 y 600 000 000)");
-                    numeroAComprobar = teclado.nextInt();
-                    }while(numeroAComprobar<RANGO_MIN||numeroAComprobar>RANGO_MAX);
+                    do {
+                        System.out.println("Introduce un numero para comprobar entre (2 y 600 000 000)");
+                        numeroAComprobar = teclado.nextInt();
+                    } while (numeroAComprobar < RANGO_MIN || numeroAComprobar > RANGO_MAX);
                     System.out.println(comprobadorPrimos(numeroAComprobar));
                     break;
                 case 2:
@@ -53,18 +54,27 @@ public class NumerosPrimos {
                     repeticion = false;
                     break;
             }
-            
+
         } while (repeticion);
     }
+
     //Metodo que recibe un numero entero y devuleve si es primo o no
     public static String comprobadorPrimos(int numeroRecibido) {
         String respuestaPrimo;
+        int divisorNoPrimo = 0;
         //Si el resto del numero dividio entre 2 es distinto a 0 o es igual a 2
         //significa que el numero es primo
         if (numeroRecibido % 2 != 0 || numeroRecibido == 2) {
             respuestaPrimo = "Numero primo";
         } else {
-            respuestaPrimo = "Numero no primo";
+
+            for (int i = 0; i < numeroRecibido; i++) {
+                if (numeroRecibido / i == 0) {
+                    divisorNoPrimo = i;
+                }
+            }
+            respuestaPrimo = "Numero no primo, su divisor es: " + divisorNoPrimo;
+
         }
 
         return respuestaPrimo;
