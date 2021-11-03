@@ -62,18 +62,27 @@ public class NumerosPrimos {
     public static String comprobadorPrimos(int numeroRecibido) {
         String respuestaPrimo;
         int divisorNoPrimo = 0;
+        int contador = 0;
+
         //Si el resto del numero dividio entre 2 es distinto a 0 o es igual a 2
         //significa que el numero es primo
-        if (numeroRecibido % 2 != 0 || numeroRecibido == 2) {
+        for (int i = 0; i < numeroRecibido; i++) {
+            do {
+                contador++;
+            } while (contador > 3);
+        }
+
+        if (numeroRecibido % 2 != 0 || numeroRecibido == 2 || contador < 3) {
+
             respuestaPrimo = "Numero primo";
         } else {
 
-            for (int i = 0; i < numeroRecibido; i++) {
-                if (numeroRecibido / i == 0) {
-                    divisorNoPrimo = i;
-                }
-            }
-            respuestaPrimo = "Numero no primo, su divisor es: " + divisorNoPrimo;
+//            for (int i = 0; i < numeroRecibido; i++) {
+//                if (numeroRecibido / i == 0) {
+//                    divisorNoPrimo = i;
+//                }
+//            }
+            respuestaPrimo = "Numero no primo";
 
         }
 
