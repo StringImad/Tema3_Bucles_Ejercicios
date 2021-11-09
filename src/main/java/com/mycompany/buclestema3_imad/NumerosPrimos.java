@@ -66,13 +66,13 @@ public class NumerosPrimos {
 
         //Si el resto del numero dividio entre 2 es distinto a 0 o es igual a 2
         //significa que el numero es primo
-        for (int i = 0; i < numeroRecibido; i++) {
-            do {
+        for (int i = numeroRecibido; i > 0; i--) {
+            if (numeroRecibido % i == 0) {
                 contador++;
-            } while (contador > 3);
+            }
         }
 
-        if (numeroRecibido % 2 != 0 || numeroRecibido == 2 || contador < 3) {
+        if (contador == 2) {
 
             respuestaPrimo = "Numero primo";
         } else {
