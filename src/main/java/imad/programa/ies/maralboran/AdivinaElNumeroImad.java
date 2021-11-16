@@ -28,7 +28,7 @@ public class AdivinaElNumeroImad {
 
             mostrarMenu();
             opcion = teclado.nextLine();
-   switch (opcion) {
+            switch (opcion) {
                 case "1":
                do{    
                     try{
@@ -69,11 +69,9 @@ public class AdivinaElNumeroImad {
                     break;
                 default:
                     System.out.println("Opción no válida");
-        }
-    }
-
-    while (!opcion.equals ("2"));
-    }
+                }
+                } while (!opcion.equals("2"));
+            }
 
     // Método monstrarMenu. Sólo se utiliza en la clase AdivinaElNumeroImad
     // método privado. No recibe parámetros y no devuelve valor (void)
@@ -83,6 +81,7 @@ public class AdivinaElNumeroImad {
                 + "2.- Pulse 2 para salir");
 
     }
+
     // Método generadorNumeroAleatorioEntreDosRangos. Sólo se utiliza en la clase AdivinaElNumeroImad
     // método privado. recibe dos parámetros y  devuelve valor generado aleatroiamente entre los dos parametros recibidos
     private static int generadorNumeroAleatorioEntreDosRangos(int RANGO_MIN, int RANGO_MAX) {
@@ -90,8 +89,9 @@ public class AdivinaElNumeroImad {
         numeroGeneradoAleatorio = aleatorio.nextInt(RANGO_MAX - RANGO_MIN + 1) + RANGO_MIN;
         return numeroGeneradoAleatorio;
     }
+
     //metodo que utilizamos para introduir un numer entro y comprueba si es valido, si lo es lo devuelve
-     private static int ComprobadorIntroduccionInt() {
+    private static int ComprobadorIntroduccionInt() {
         int numeroIntroducido = 0;
         boolean repeticion = false;
         do {
